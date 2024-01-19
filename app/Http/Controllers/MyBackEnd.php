@@ -23,11 +23,14 @@ class MyBackEnd extends Controller
 
     public function view_mainpage()
     {
-        return view('client.homepages.mainpage');
+        $table_data = subsrcibe_user::all();
+        return view('client.homepages.mainpage', compact('table_data'));
+
     }
-
-
-
+    public function view_historymain(){
+        $table_data = $table_data = subsrcibe_user::where('Status', 'paid')->get();
+        return view('client.historymain.historymain', compact('table_data'));
+    }
     public function view_supportpage($acc_no)
     {
         $credentials = $acc_no;
@@ -42,7 +45,7 @@ class MyBackEnd extends Controller
         $table_data = subsrcibe_user::where('AccountNo',$AccountNo)->get();
         return view('client.historypage.history', compact('table_data', 'AccountNo'));
     }
-
+    
     public function view_profile()
     {
         return view('client.settingpage.profile');

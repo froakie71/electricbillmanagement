@@ -4,7 +4,7 @@
 
 <body>
     <div class ="exitlogo">
-        <a href="{{ route('mainpageuser',$credentials) }}">
+        <a href="{{ route('view.mainpage') }}">
             <img src="/imgs/exit.jpg" alt="image of a person" height="50px">
         </a>
     </div>  

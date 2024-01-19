@@ -23,7 +23,9 @@
             </thead>
             <tbody>
                 @foreach ($table_data as $item)
+                <!-- <p>{{$item}}</p> -->
                     <tr>
+                        @if($item->Status == 'unpaid'){
                         <td>{{ $item->AccountNo }}</td>
                         <td>{{ $item->email }}</td>
                         <td>{{ $item->PreviousBill }}</td>
@@ -39,7 +41,9 @@
                             <a href="{{ route('delete', ['id' => encrypt($item->AccountNo)]) }}">
                                 <img src="/imgs/delete.png" alt="delete-icon" width="30px">
                             </a>
-                        </td>
+                        </td> 
+                        }
+                        @endif
                     </tr>
                 @endforeach
                 <!-- Add more rows as needed -->

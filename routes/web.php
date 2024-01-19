@@ -36,6 +36,8 @@ Route::get('/', function () {
 
 //Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('historymain', [MyBackEnd::class, 'view_historymain'])->name('view.historymain');
+
     Route::get('mainpageuser/{AccountNo}', [MyBackEnd::class, 'mainpageuser'])->name('mainpageuser');
     Route::get('mainpage', [MyBackEnd::class, 'view_mainpage'])->name('view.mainpage');
     Route::get('supportpage/{AccountNo}', [MyBackEnd::class, 'view_supportpage'])->name('supportpage');

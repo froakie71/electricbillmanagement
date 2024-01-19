@@ -18,7 +18,7 @@
                 <img src="/imgs/history.png" alt="image of a person" height="50px">
             </div>
             <div>
-                <a href="{{ route('view.history') }}">History</a>
+                <a href="{{ route('view.historymain') }}">History</a>
             </div>
         </li>
 

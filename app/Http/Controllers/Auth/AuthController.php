@@ -23,7 +23,6 @@ class AuthController extends Controller
     }
     public function postLogin(Request $request): RedirectResponse
     {
-
         $request->validate([
             'name' => ['required'],
             'password' => 'required',
@@ -31,7 +30,6 @@ class AuthController extends Controller
 
        $credentials = $request->only('name', 'password');
         if (Auth::attempt($credentials)) {
-
             $request->session()->regenerate();
             return redirect()->intended('mainpage')->with('message','You have Successfully loggedin');
         }
